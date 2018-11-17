@@ -1,6 +1,7 @@
 puts "最初はグーじゃんけん・・・・"
 puts "[0]グー￥n[1]チョキ￥n[2]パー"
 
+def janken
   player_hand = gets.to_i
   program_hand = rand(3)
 
@@ -16,7 +17,8 @@ puts "[0]グー￥n[1]チョキ￥n[2]パー"
   else
     puts "あなたの負けです"
     return false
-  end
+    end
+end
 
  next_game = true
 while next_game do
