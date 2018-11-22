@@ -1,8 +1,12 @@
 puts "最初はグーじゃんけん・・・・"
-puts "[0]グー￥n[1]チョキ￥n[2]パー"
+puts "[1]グー￥n[2]チョキ￥n[3]パー"
 
 def janken
   player_hand = gets.to_i
+  if player_hand < 1 || 3 < player_hand
+    puts "1,2,3のどれかを入力してください！！"
+   return true
+  end
   program_hand = rand(3)
 
   jankens =["グー","チョキ","パー"]
@@ -11,7 +15,7 @@ def janken
   if player_hand == program_hand
     puts "あいこで"
     return true
-  elsif player_hand == 0 && program_hand == 1 || player_hand == 2 && program_hand == 0 || player_hand == 1 && program_hand == 2
+  elsif player_hand == 1 && program_hand == 2 || player_hand == 3 && program_hand == 1 || player_hand == 2 && program_hand == 3
     puts "あなたの勝ちです！"
     return false
   else
